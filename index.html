@@ -2,38 +2,65 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>ListApp</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>        
+        <style>
+            img.fullscreen {
+                max-height: 100%;
+                max-width: 100%;
+            }       
+        </style>        
     </head>
     <body>
-        <header>
-            <h1>My Photos</h1>
-        </header>
-        <article>
-            <ul>
-                <li>
-                    <a href="#">
-                    <img src="images/doggie_tn.jpg" alt="Min Pin" />
-                    <h3>Miniature Doberman Pincher</h3>
-                    <p>This is what happens when a friend brings a dog to the studio.</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                    <img src="images/gummies_tn.jpg" alt="Gummy Bears" />
-                    <h3>Gummy Bears</h3>
-                    <p>Three different poster boards...mirror for reflection, black for background white for highlights</p>
-                    </a>
-                </li>
-            </ul>
-        </article>        
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Photos</a></li>
-                    <li><a href="#">Info</a></li>
+        <div data-role="page" id="photos">
+            <header data-role="header">
+                <h1>My Photos</h1>
+            </header>
+            <article data-role="content">
+                <ul data-role="listview" data-filter="true">
+                    <li>
+                        <a href="#dog">
+                            <img src="images/doggie_tn.jpg" alt="Min Pin" />
+                            <h3>Miniature Doberman Pincher</h3>
+                            <p>This is what happens when a friend brings a dog to the studio.</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gummies">
+                            <img src="images/gummies_tn.jpg" alt="Gummy Bears" />
+                            <h3>Gummy Bears</h3>
+                            <p>Three different poster boards...mirror for reflection, black for background white for highlights</p>
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-        </footer>        
+            </article>        
+            <footer data-role="footer" data-position="fixed">
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a href="#" data-icon="home">Home</a></li>
+                        <li><a href="#" data-icon="grid">Photos</a></li>
+                        <li><a href="#" data-icon="info">Info</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </div> <!-- page -->
+        <div data-role="page" id="dog">
+            <header data-role="header">
+                <h1>Min Pin</h1>
+                <a href="#photos" data-icon="grid" data-iconpos="notext">Photos</a>
+            </header>
+            <img src="images/doggie.jpg" class="fullscreen" alt="Min Pin" />
+        </div><!-- Page Dog -->
+
+        <div data-role="page" id="gummies">
+            <header data-role="header">
+                <h1>Gummy Bears</h1>
+                <a href="#photos" data-icon="grid" data-iconpos="notext">Photos</a>
+            </header>
+            <img src="images/gummies.jpg" class="fullscreen" alt="Gummy Bears" />
+        </div><!-- Page Gummy Bears -->         
     </body>
 </html>
